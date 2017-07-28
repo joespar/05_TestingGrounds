@@ -7,7 +7,7 @@
 #include "ChooseNextWaypoint.generated.h"
 
 /**
- * 
+ * appears in "Patrol" behavior tree
  */
 UCLASS()
 class S05_TESTINGGROUNDS_API UChooseNextWaypoint : public UBTTaskNode
@@ -16,6 +16,11 @@ class S05_TESTINGGROUNDS_API UChooseNextWaypoint : public UBTTaskNode
 	
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 
-	
-	
+protected:
+//expose a blackboard key selector
+		UPROPERTY(EditAnywhere, Category = "Blackboard")
+		struct FBlackboardKeySelector IndexKey;	
+
+		UPROPERTY(EditAnywhere, Category = "Blackboard")
+		struct FBlackboardKeySelector WaypointKey;
 };
