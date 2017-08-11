@@ -40,7 +40,7 @@ void AGun::Tick(float DeltaTime)
 
 void AGun::OnFire()
 {
-	UE_LOG(LogTemp, Warning, TEXT("init AGun::OnFire()"))
+	//UE_LOG(LogTemp, Warning, TEXT("init AGun::OnFire()"))
 	// try and fire a projectile
 	if (ProjectileClass != NULL)
 	{
@@ -71,6 +71,6 @@ void AGun::OnFire()
 			AnimInstance->Montage_Play(FireAnimation, 1.f);
 		}
 	}
-	UE_LOG(LogTemp, Warning, TEXT(" end AGun::OnFire()"))
+	//UE_LOG(LogTemp, Warning, TEXT(" end AGun::OnFire()"))
 }
 
