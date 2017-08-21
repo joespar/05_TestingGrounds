@@ -30,7 +30,7 @@ public:
 	TSubclassOf<class AGun> GunBlueprint;
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
-	void FireGun();
+	void PullTrigger();
 
 private:
 	/** Gun mesh: 1st person view (seen only by self) */
