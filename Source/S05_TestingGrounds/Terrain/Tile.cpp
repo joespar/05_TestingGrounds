@@ -2,6 +2,7 @@
 
 #include "Tile.h"
 #include "DrawDebugHelpers.h"
+//#include "EngineUtils.h"
 
 // Sets default values
 ATile::ATile()
@@ -59,8 +60,15 @@ void ATile::PlaceActor(TSubclassOf<AActor> ToSpawn, FVector SpawnPoint, float Ro
 void ATile::BeginPlay()
 {
 	Super::BeginPlay();
-	//CanSpawnAtLocation(GetActorLocation(), 300);
-	//CanSpawnAtLocation(GetActorLocation() + FVector(0, 0, 1000), 300);
+
+	//TActorIterator<AActor> ActorIterator = TActorIterator<AActor>(GetWorld());
+	//while(ActorIterator) // If there is another Actor to Iterate over, then we can use this...
+	//{
+	//	AActor* FoundActor = *ActorIterator;
+	//	UE_LOG(LogTemp, Warning, TEXT("Found Actor: s%"), *FoundActor->GetName())
+	//	//"advance" the iterator, move to next...
+	//	++ActorIterator; //must be prefix ++
+	//}
 }
 
 // Called every frame
