@@ -23,6 +23,8 @@ public:
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pool")
 	class UActorPool* NavMeshBoundsVolumePool;
+	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Pool")
+	//TArray<class UActorPool*> ActorNMBVPool;
 
 private:
 	//declares it inline
