@@ -26,15 +26,10 @@ struct FRandomProperties
 	float Radius;
 	float MinScale;
 	float MaxScale;
-
-	/*FRandomProperties(int minSpawn, int maxSpawn, float radius, float minScale, float maxScale)
-	{
-		MinSpawn = minSpawn;
-		MaxSpawn = maxSpawn;
-		Radius = radius;
-		MinScale = minScale;
-		MaxScale = maxScale;
-	}*/
+	
+	//public:
+	//FRandomProperties(int minSpawn, int maxSpawn, float radius, float minScale, float maxScale) : 
+	//MinSpawn (minSpawn), MaxSpawn (maxSpawn), Radius (radius), MinScale (minScale), MaxScale (maxScale) {}
 };
 
 class UActorPool;
@@ -76,13 +71,16 @@ public:
 private:
 	void PositionNavMeshBoundsVolume();
 
-	TArray<FSpawnPosition> RandomSpawnPositions(FRandomProperties RandomProperties);
+	FRandomProperties InitRandomProps(int MinSpawn, int MaxSpawn, float Radius, float MinScale, float MaxScale);
 
 	bool FindEmptyLocation(FVector& OutLocation, float Radius);
 
+	template<class T>
+	void RandomlyPlaceActors(TSubclassOf<T> ToSpawn, int MinSpawn = 1, int MaxSpawn = 1, float Radius = 500, float MinScale = 1, float MaxScale = 1);
+
 	void PlaceActor(TSubclassOf<AActor> ToSpawn, FSpawnPosition SpawnPosition);
 
-	void PlaceAIPawn(TSubclassOf<APawn> ToSpawn, FSpawnPosition SpawnPosition);
+	void PlaceActor(TSubclassOf<APawn> ToSpawn, FSpawnPosition SpawnPosition);
 
 	bool CanSpawnAtLocation(FVector Location, float Radius);	
 	
